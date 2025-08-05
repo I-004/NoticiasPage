@@ -1,0 +1,520 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #1e3932;
+    background-color: #f7f7f7;
+}
+
+/* Header estilo Starbucks */
+header {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.85rem;
+    font-weight: 300;
+}
+
+/* Navigation estilo Starbucks */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+nav a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Hero Section estilo Starbucks */
+.hero-section {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Main Container */
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* Search Bar estilo Starbucks */
+.search-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 3rem;
+    border: 1px solid #e0e0e0;
+}
+
+.search-box {
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 1.2rem 1.5rem;
+    border: 2px solid #d4d4d4;
+    border-right: none;
+    border-radius: 50px 0 0 50px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #3498db;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.search-btn {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 1.2rem 2rem;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+.search-btn:hover {
+    background: linear-gradient(135deg, #2980b9, #1f5582);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+/* Category Pills estilo Starbucks */
+.category-pills {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.pill {
+    background: white;
+    color: #2c3e50;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    border: 2px solid #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.pill:hover, .pill.active {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border-color: #3498db;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+/* News Grid estilo Starbucks */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* News Card estilo Starbucks */
+.news-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.news-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2c3e50);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover::before {
+    transform: scaleX(1);
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+.news-image {
+    width: 100%;
+    height: 240px;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.1));
+}
+
+.news-content {
+    padding: 2rem;
+}
+
+.news-category {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    display: inline-block;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.news-title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #1e3932;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+}
+
+.news-summary {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.news-date {
+    color: #999;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.news-author {
+    color: #3498db;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Load More Button estilo Starbucks */
+.load-more-container {
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.load-more-btn {
+    background: white;
+    color: #2c3e50;
+    border: 2px solid #2c3e50;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.load-more-btn:hover {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(44, 62, 80, 0.3);
+}
+
+/* Footer estilo Starbucks */
+footer {
+    background: #1e3932;
+    color: white;
+    padding: 3rem 0 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.footer-content p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Loading Animation */
+.loading {
+    display: none;
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    margin: 2rem 0;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #666;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* Animaciones adicionales */
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.news-card img {
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #searchInput, .search-btn {
+        border-radius: 50px;
+        border: 2px solid #d4d4d4;
+    }
+
+    .category-pills {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .pill {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+    }
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar estilo Starbucks */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #2980b9, #1f4037);
+}

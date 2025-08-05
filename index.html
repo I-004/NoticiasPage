@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicados - Noticias</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-circle">C</div>
+                <div>
+                    <h1>Comunicados</h1>
+                    <span>Tu fuente confiable de noticias</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="filterNews('todas')" class="active">Inicio</a></li>
+                    <li><a href="#" onclick="filterNews('tecnologia')">Tecnología</a></li>
+                    <li><a href="#" onclick="filterNews('deportes')">Deportes</a></li>
+                    <li><a href="#" onclick="filterNews('politica')">Política</a></li>
+                    <li><a href="#" onclick="filterNews('economia')">Economía</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Mantente Informado</h1>
+            <p class="hero-subtitle">Descubre las noticias más relevantes del día con la calidad y confianza que nos caracteriza</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="¿Qué noticias te interesan hoy?" onkeyup="searchNews()">
+                <button class="search-btn" onclick="searchNews()">🔍 Buscar</button>
+            </div>
+        </div>
+
+        <div class="category-pills">
+            <a href="#" class="pill active" onclick="filterNews('todas')">Todas las noticias</a>
+            <a href="#" class="pill" onclick="filterNews('tecnologia')">Tecnología</a>
+            <a href="#" class="pill" onclick="filterNews('deportes')">Deportes</a>
+            <a href="#" class="pill" onclick="filterNews('politica')">Política</a>
+            <a href="#" class="pill" onclick="filterNews('economia')">Economía</a>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Cargando las mejores noticias para ti...</p>
+        </div>
+
+        <div class="news-grid" id="newsGrid">
+            <!-- Las noticias se cargarán aquí dinámicamente -->
+        </div>
+
+        <div class="load-more-container">
+            <button class="load-more-btn" onclick="loadMoreNews()">Ver más noticias</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Comunicados</h3>
+            <p>&copy; 2025 Comunicados. Todos los derechos reservados.</p>
+            <p>Comprometidos con brindarte información veraz y oportuna</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>
