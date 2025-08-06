@@ -480,3 +480,6 @@ document.addEventListener('DOMContentLoaded', function() {
 window.onload = function() {
     loadInitialNews();
 };
+
+
+/*Linea extra sin sentido*/
